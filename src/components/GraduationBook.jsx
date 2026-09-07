@@ -523,7 +523,7 @@ export default function GraduationBook() {
           >
             <div
               style={{
-                width: `${autoPlayProgress}%`,
+                width: `${isAutoPlaying && !isHovered && isInView ? progress : 0}%`,
                 height: '100%',
                 background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))',
                 transition: 'width 0.08s linear',
