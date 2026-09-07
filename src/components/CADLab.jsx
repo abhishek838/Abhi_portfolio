@@ -26,19 +26,19 @@ export default function CADLab() {
       ],
       slides: [
         {
-          image: '/images/cad/cad-stand-isometric.jpg',
+          image: './images/cad/cad-stand-isometric.jpg',
           tag: 'VERIFIED 3D MODEL',
           title: 'Finished Anodized Prototype Model',
           desc: 'Isometric perspective of the finalized green anodized mobile stand with dual cradle supports.',
         },
         {
-          image: '/images/cad/cad-flange-bending.jpg',
+          image: './images/cad/cad-flange-bending.jpg',
           tag: 'PARAMETRIC SIMULATION',
           title: 'Sheet Metal Flange Bending Simulation',
           desc: 'Contour flange angle calculation with dynamic bend compensation to prevent metal fatigue.',
         },
         {
-          image: '/images/cad/cad-stand-cablehole.jpg',
+          image: './images/cad/cad-stand-cablehole.jpg',
           tag: 'ERGONOMIC DESIGN',
           title: 'Port Geometry & Cable Management',
           desc: 'Rear isometric view highlighting the 28mm chamfered circular aperture for seamless cord routing.',
@@ -64,19 +64,19 @@ export default function CADLab() {
       ],
       slides: [
         {
-          image: '/images/cad/cad-chair-bamboo.jpg',
+          image: './images/cad/cad-chair-bamboo.jpg',
           tag: 'TUBULAR CANE ARMCHAIR',
           title: 'Bamboo Armchair with Cylindrical Accents',
           desc: 'Cylindrical cane structure with tubular armrests, cross-bracing rails, and front wheel-inspired decorative emblems.',
         },
         {
-          image: '/images/cad/cad-chair-wood1.jpg',
+          image: './images/cad/cad-chair-wood1.jpg',
           tag: 'SOLID TIMBER DESIGN',
           title: 'Classic Slat-Back Wooden Chair (View 1)',
           desc: 'Solid hardwood dining chair featuring triple-slat ergonomic lumbar support and reinforced four-post leg pillars.',
         },
         {
-          image: '/images/cad/cad-chair-wood2.jpg',
+          image: './images/cad/cad-chair-wood2.jpg',
           tag: 'WOOD GRAIN TEXTURE',
           title: 'Ergonomic Wooden Chair (View 2)',
           desc: 'Perspective study highlighting the chamfered seat edges, material gloss reflection, and load-bearing stress distribution.',
@@ -102,13 +102,13 @@ export default function CADLab() {
       ],
       slides: [
         {
-          image: '/images/cad/cad-mouse-iso.jpg',
+          image: './images/cad/cad-mouse-iso.jpg',
           tag: 'FRONT ISOMETRIC VIEW',
           title: 'Translucent Shell & Tactile Scroll Assembly',
           desc: 'Front isometric angle showing the sculpted click buttons, central scroll wheel housing, and ergonomic thumb rest contour.',
         },
         {
-          image: '/images/cad/cad-mouse-rear.jpg',
+          image: './images/cad/cad-mouse-rear.jpg',
           tag: 'PALM CONTOUR & EMBLEM',
           title: 'Rear Palm Arch with "ASALA" Emblem',
           desc: 'Rear elevation showcasing the palm arch curvature, internal chassis silhouette, and illuminated red ASALA badge.',
@@ -124,7 +124,7 @@ export default function CADLab() {
       status: 'MANUFACTURING BLANK',
       date: 'College Engineering Lab',
       isSlider: false,
-      image: '/images/cad/cad-flat-pattern.jpg',
+      image: './images/cad/cad-flat-pattern.jpg',
       material: 'Sheet Metal Steel Blank',
       description:
         'The unbent 2D flat development drawing ready for CNC laser profile cutting. Shows exact bend lines, corner relief cutouts, and fork dimensions before press-brake deformation.',
@@ -135,7 +135,7 @@ export default function CADLab() {
       ],
       slides: [
         {
-          image: '/images/cad/cad-flat-pattern.jpg',
+          image: './images/cad/cad-flat-pattern.jpg',
           tag: 'MANUFACTURING BLANK',
           title: 'Flat Pattern Layout',
           desc: '2D laser cutting profile.',
@@ -151,7 +151,7 @@ export default function CADLab() {
       status: 'SURFACE & SOLID MODEL',
       date: 'College Engineering Lab',
       isSlider: false,
-      image: '/images/cad/cad-t-joint-manifold.jpg',
+      image: './images/cad/cad-t-joint-manifold.jpg',
       material: 'Textured Surface / Alloy Tubing',
       description:
         'Solid body 3D modeling of an orthogonal pipe joint manifold. Focuses on saddle-cut curve projection, wall thickness consistency, and clean surface intersection fillets.',
@@ -162,7 +162,7 @@ export default function CADLab() {
       ],
       slides: [
         {
-          image: '/images/cad/cad-t-joint-manifold.jpg',
+          image: './images/cad/cad-t-joint-manifold.jpg',
           tag: 'SURFACE & SOLID MODEL',
           title: 'T-Joint Manifold Assembly',
           desc: 'Orthogonal pipe intersection model.',

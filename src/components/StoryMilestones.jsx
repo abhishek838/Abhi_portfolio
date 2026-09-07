@@ -13,7 +13,7 @@ export default function StoryMilestones() {
       date: '1st Year Foundation Project',
       location: 'Engineering Campus Quad',
       icon: Award,
-      image: '/images/story-hydraulic-gate.jpg',
+      image: './images/story-hydraulic-gate.jpg',
       aspect: 'landscape',
       shortStory:
         'Where the engineering journey began. Designing, building, and demonstrating a working hydraulic canal gate and lock mechanism with the cohort using Pascal’s principle and fluid kinematics.',
@@ -33,7 +33,7 @@ export default function StoryMilestones() {
       date: 'High Altitude Expedition',
       location: 'Western Ghats Ridge',
       icon: Compass,
-      image: '/images/story-summit.jpg',
+      image: './images/story-summit.jpg',
       aspect: 'portrait',
       shortStory:
         'Pushing limits beyond the terminal. Climbing peaks teaches patience, endurance, and the clarity gained from viewing systems from the highest vantage point.',
@@ -49,7 +49,7 @@ export default function StoryMilestones() {
       date: 'Graduation Farewell Milestone',
       location: 'MIT Academy of Engineering',
       icon: Users,
-      image: '/images/story-cohort.jpg',
+      image: './images/story-cohort.jpg',
       aspect: 'landscape',
       shortStory:
         'Suiting up with the engineering cohort for our college farewell ceremony. Celebrating four unforgettable years of shared triumphs, late-night problem-solving, and unbreakable camaraderie.',
@@ -69,7 +69,7 @@ export default function StoryMilestones() {
       date: 'World Parliament Conclave',
       location: 'Dr. Vishwanath Karad MIT World Peace University',
       icon: BookOpen,
-      image: '/images/story-academic.jpg',
+      image: './images/story-academic.jpg',
       aspect: 'landscape',
       shortStory:
         'Attending the global conclave at MIT WPU to reflect upon the human dimension, ethics, and philosophical implications of scientific and technological advancement.',
@@ -85,7 +85,7 @@ export default function StoryMilestones() {
       date: 'Graduation Gala & Horizon',
       location: 'Metropolitan Rooftop',
       icon: Award,
-      image: '/images/story-gala.jpg',
+      image: './images/story-gala.jpg',
       aspect: 'landscape',
       shortStory:
         'Celebrating unforgettable journeys, shared victories, and lifelong brotherhood under city nightlines. One chapter closes, launching infinite creative frontiers.',

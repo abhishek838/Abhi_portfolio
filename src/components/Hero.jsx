@@ -303,7 +303,7 @@ export default function Hero({ onLaunchF1 }) {
                 }}
               >
                 <img
-                  src="/images/profile-blazer.jpg"
+                  src="./images/profile-blazer.jpg"
                   alt="Abhishek Kumar — Full-Stack & Frontend Creative Developer"
                   style={{
                     width: '100%',

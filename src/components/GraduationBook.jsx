@@ -488,7 +488,7 @@ export default function GraduationBook() {
               </button>
 
               <a
-                href="/documents/Abhishek_Kumar_Graduation_Book.pdf"
+                href="./documents/Abhishek_Kumar_Graduation_Book.pdf"
                 download="Abhishek_Kumar_Graduation_Book_MIT_AOE.pdf"
                 style={{
                   display: 'inline-flex',
@@ -500,23 +500,30 @@ export default function GraduationBook() {
                   padding: '0.35rem 0.85rem',
                   borderRadius: '9999px',
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.75rem',
+                  fontSize: '0.72rem',
                   textDecoration: 'none',
-                  transition: 'all 0.2s ease',
+                  cursor: 'pointer',
                 }}
-                title="Download original 23-page PDF"
+                title="Download 23-Page MIT AOE Graduation Book PDF"
               >
-                <Download size={13} />
-                <span>PDF (8.5MB)</span>
+                <Download size={13} color="var(--accent-primary)" />
+                <span>PDF BOOK</span>
               </a>
             </div>
           </div>
 
-          {/* Smooth Auto-Slide Progress Bar */}
-          <div style={{ width: '100%', height: '3px', background: 'rgba(255, 255, 255, 0.08)', position: 'relative' }}>
+          {/* Progress Loading Bar */}
+          <div
+            style={{
+              height: '3px',
+              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
             <div
               style={{
-                width: `${isAutoPlaying && !isHovered && isInView ? progress : 0}%`,
+                width: `${autoPlayProgress}%`,
                 height: '100%',
                 background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))',
                 transition: 'width 0.08s linear',
@@ -535,14 +542,14 @@ export default function GraduationBook() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              cursor: 'zoom-in',
               overflow: 'hidden',
-              cursor: 'pointer',
             }}
             onClick={() => setIsFullscreen(true)}
           >
             <img
               key={currentPage}
-              src={`/images/graduation-book/page-${currentPage + 1}.jpg`}
+              src={`./images/graduation-book/page-${currentPage + 1}.jpg`}
               alt={currentInfo.title}
               style={{
                 width: '100%',
@@ -716,7 +723,7 @@ export default function GraduationBook() {
                   title={`Page ${p.num}: ${p.title}`}
                 >
                   <img
-                    src={`/images/graduation-book/page-${p.num}.jpg`}
+                    src={`./images/graduation-book/page-${p.num}.jpg`}
                     alt={p.title}
                     style={{
                       width: '100%',
@@ -832,7 +839,7 @@ export default function GraduationBook() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={`/images/graduation-book/page-${currentPage + 1}.jpg`}
+                src={`./images/graduation-book/page-${currentPage + 1}.jpg`}
                 alt={currentInfo.title}
                 style={{
                   maxWidth: '96vw',

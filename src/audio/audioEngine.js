@@ -7,28 +7,28 @@ export const CALM_TRACKS = [
     title: 'Daybreak',
     genre: 'Acoustic Piano & Strings',
     mood: 'Inspiring & Serene',
-    src: '/audio/Daybreak.mp3',
+    src: './audio/Daybreak.mp3',
   },
   {
     id: 'a-memory-away',
     title: 'A Memory Away',
     genre: 'Warm Nostalgic Piano',
     mood: 'Gentle & Melodic',
-    src: '/audio/A_Memory_Away.mp3',
+    src: './audio/A_Memory_Away.mp3',
   },
   {
     id: 'leaving-millie',
     title: 'Leaving Millie',
     genre: 'Classical Acoustic Solo',
     mood: 'Deep Focus & Calm',
-    src: '/audio/Leaving_Millie.mp3',
+    src: './audio/Leaving_Millie.mp3',
   },
   {
     id: 'lost-islands',
     title: 'Lost Islands',
     genre: 'Ethereal Ambient Chill',
     mood: 'Floating & Meditative',
-    src: '/audio/Lost_Islands.mp3',
+    src: './audio/Lost_Islands.mp3',
   },
 ];
 

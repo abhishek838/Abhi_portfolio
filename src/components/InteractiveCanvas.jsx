@@ -127,8 +127,8 @@ export default function InteractiveCanvas({ theme = 'normal' }) {
       new Image(),
       new Image(),
     ];
-    crystalImages[0].src = '/images/snowflake_crystal_1_sm.png';
-    crystalImages[1].src = '/images/snowflake_crystal_sm.png';
+    crystalImages[0].src = './images/snowflake_crystal_1_sm.png';
+    crystalImages[1].src = './images/snowflake_crystal_sm.png';
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;

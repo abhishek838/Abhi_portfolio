@@ -76,7 +76,7 @@ export default function Projects() {
       ],
       slides: [
         {
-          image: '/images/bookbridge-community.jpg',
+          image: './images/bookbridge-community.jpg',
           tag: 'DONATE & EMPOWER',
           title: 'Bridging Generous Donors with Students in Need',
           desc: 'A social-impact digital platform connecting individuals who want to give away pre-owned textbooks and literature with students and readers who cannot afford educational materials.',
@@ -145,7 +145,7 @@ export default function Projects() {
       ],
       slides: [
         {
-          image: '/images/tapua-makhana.png',
+          image: './images/tapua-makhana.png',
           tag: 'FLAGSHIP D2C STOREFRONT',
           title: 'Tapua Makhana: Goodness in Every Bite (Bihar to India)',
           desc: 'Storefront UI with curated categories (Classic Raw Makhana, Flavored Snacks, Makhana Flour, Empowering Farmers) and complete D2C ordering pipeline.',
@@ -230,19 +230,19 @@ export default function Projects() {
       },
       slides: [
         {
-          image: '/images/robotics/line-follower-side.jpg',
+          image: './images/robotics/line-follower-side.jpg',
           tag: '4WD CHASSIS & WHEELS',
           title: 'Robotic Vehicle & High-Traction Wheels',
           desc: 'Side elevation highlighting the wide chevron-ribbed rubber wheels, internal battery compartment, and dual DC motor drive wiring.',
         },
         {
-          image: '/images/robotics/line-follower-sensors.jpg',
+          image: './images/robotics/line-follower-sensors.jpg',
           tag: 'OPTICAL SENSOR DECK',
           title: 'Infrared (IR) Sensor Array Platform',
           desc: 'Top view of the optical sensor mounting deck with calibrated IR sensors, potentiometers, and ribbon wiring harness tuned for black line contrast.',
         },
         {
-          image: '/images/robotics/line-follower-chassis.jpg',
+          image: './images/robotics/line-follower-chassis.jpg',
           tag: 'FABRICATED MECHANICS PLATE',
           title: 'Dual-Deck Chassis & College Engineering IDs',
           desc: 'Fabricated chassis plate bearing college Engineering Mechanics markings and team registration IDs (including B8280838 - Abhishek Kumar).',
@@ -309,21 +309,21 @@ export default function Projects() {
       ],
       slides: [
         {
-          image: '/images/robotics/clap-switch-overview.jpg',
+          image: './images/robotics/clap-switch-overview.jpg',
           tag: 'WALL INSTALLATION',
           title: 'Full Hardware & AC Light Wall Deployment',
           desc: 'Complete live system deployed on wall: regulated AC power adapter, Arduino Uno, 5V optocoupled relay, and acoustic microphone sensor wired to the room tubelight fixture.',
           fit: 'cover',
         },
         {
-          image: '/images/robotics/clap-switch-circuit.jpg',
+          image: './images/robotics/clap-switch-circuit.jpg',
           tag: 'RELAY & SENSOR CIRCUITRY',
           title: 'Acoustic Sound Sensor & Optocoupled Relay Module',
           desc: 'Detailed view of the LM393 acoustic sensor module with threshold potentiometer, 5V SPDT switching relay, and high-voltage AC mains junction wiring.',
           fit: 'cover',
         },
         {
-          image: '/images/robotics/clap-switch-arduino.jpg',
+          image: './images/robotics/clap-switch-arduino.jpg',
           tag: 'ARDUINO UNO CORE',
           title: 'Arduino Uno R3 Microcontroller Deck',
           desc: 'Macro inspection of the genuine Arduino Uno R3 board (ATmega328P @ 16MHz) running bistable state-latching logic and noise-filtered debounce routines.',
@@ -401,7 +401,7 @@ export default function Projects() {
       },
       slides: [
         {
-          image: '/images/story-hydraulic-gate.jpg',
+          image: './images/story-hydraulic-gate.jpg',
           tag: '1ST YEAR TEAM PRESENTATION',
           title: 'Campus Quad Prototype Presentation',
           desc: 'Abhishek Kumar and engineering teammates presenting the working Hydraulic Gate prototype and theoretical display board on the college campus quad.',
@@ -454,7 +454,7 @@ export default function Projects() {
       ],
       slides: [
         {
-          image: '/images/blockchain-biometric-auth.jpg',
+          image: './images/blockchain-biometric-auth.jpg',
           tag: 'CRYPTOGRAPHIC VISUALIZATION',
           title: 'Decentralized Blockchain & Biometric Entropy Encryption',
           desc: 'Conceptual visualization of multi-layer biometric authentication entropy combined with SHA-256 decentralized blockchain consensus nodes to eliminate single-point server vulnerabilities.',
@@ -512,7 +512,7 @@ export default function Projects() {
       ],
       slides: [
         {
-          image: '/images/monkbike.png',
+          image: './images/monkbike.png',
           tag: 'WE5 MOBILITY INTERNSHIP',
           title: 'MonkBike Two-Wheeler Rental Platform',
           desc: 'Frontend web application engineered during college internship at WE5 Mobility Solutions using HTML, CSS, JavaScript, and React for vehicle fleet rental management and booking.',
