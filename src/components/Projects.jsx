@@ -40,17 +40,18 @@ export default function Projects() {
     {
       id: 'bookbridge',
       title: 'BookBridge',
-      subtitle: 'Community Book Donation & Free Knowledge Redistribution Platform',
+      subtitle: 'Community Book Donation Platform • Engineered at YugaYatra Retail',
       icon: Book,
       type: 'software',
       category: 'SOCIAL IMPACT & MERN FULL-STACK PLATFORM',
       previewBadge: '📚 BOOK DONATION & IMPACT',
       status: 'PRODUCTION READY',
       github: 'https://github.com/abhishek838/BookBridge',
-      tags: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Social Impact', 'REST APIs', 'UI/UX'],
+      tags: ['React.js', 'Node.js', 'Express', 'MongoDB', 'YugaYatra Retail', 'Social Impact', 'REST APIs', 'UI/UX'],
       summary:
         'A compassionate community book-donation and literature redistribution platform built to democratize education. BookBridge bridges the financial divide by enabling generous individuals, alumni, and readers to donate their pre-owned textbooks and literature directly to students and avid readers who cannot afford them—completely free of cost. Engineered with the full MERN stack, it features seamless donation onboarding, zero-cost student request workflows, real-time inventory management, and proximity matching.',
       highlights: [
+        'Engineered at YugaYatra Retail (OPC) Pvt. Ltd.: Architected reusable React component libraries that accelerated feature development cycles by ~30% with optimized lazy-loading and code splitting.',
         'Compassionate Donation Pipeline: Enables donors to easily list pre-owned textbooks, study guides, and literature to pass the gift of knowledge forward.',
         'Zero-Cost Access for Underprivileged Students: Students facing financial constraints can request needed academic books and receive them 100% free of charge.',
         'Smart Proximity & Campus Drop Matching: Intelligent matching algorithm pairs local book donors with nearby student requests for streamlined peer handoffs and campus drop-boxes.',
@@ -583,15 +584,15 @@ export default function Projects() {
       previewBadge: '🛵 SMART MOBILITY',
       status: 'VERIFIED REPO',
       github: 'https://github.com/abhishek838/Monk_Bike',
-      tags: ['React.js', 'JavaScript ES6+', 'HTML5 / CSS3', 'State Management', 'Fleet Logistics', 'WE5 Mobility Solutions', 'Internship'],
+      tags: ['React.js', 'Bootstrap', 'REST APIs', 'MonkBike', 'SuperMonk.store', 'Cross-Browser UI', 'WE5 Mobility Solutions', 'Internship'],
       summary:
-        'A two-wheeler rental bike web platform created during my internship at WE5 Mobility Solutions in college. Engineered the frontend from scratch using HTML, CSS, JavaScript, and React to streamline vehicle fleet logistics, real-time availability checks, date-driven reservation scheduling, and seamless checkout flows.',
+        'Developed Monk Bike (bike rental platform) and SuperMonk.store (grocery e-commerce app) during my web development internship at We5 Mobility Solution Pvt. Ltd. Engineered responsive, cross-browser compatible interfaces using React.js and Bootstrap, consuming REST APIs and managing product catalogue data within a 4-member Agile team.',
       highlights: [
-        'Internship at WE5 Mobility Solutions: Created during college as a frontend engineering intern, collaborating on production vehicle fleet workflows.',
-        'Built Frontend with React & Modern Web Stack: Engineered the user interface from scratch using HTML5, CSS3, JavaScript ES6+, and React.js with modular component architecture.',
-        'Optimized Client-Side State Machine: Managed complex vehicle scheduling, duration calculation, and deposit validation.',
-        'Interactive Vehicle Catalog: Dynamic filtering by two-wheeler category, engine displacement (CC), transmission, and pricing tiers.',
-        'Frictionless Booking User Journey: Instant field-level client validation, zero cumulative layout shifts (CLS), and snappy reactive transitions.',
+        'Internship at We5 Mobility Solution Pvt. Ltd. (Mar 2022 – Sep 2022): Collaborated as a Web Developer within a 4-member Agile team across sprint planning, feature development, and code reviews.',
+        'Developed Monk Bike & SuperMonk.store: Engineered both the bike rental platform and the rapid grocery e-commerce app using React.js, Bootstrap, and REST APIs.',
+        'Cross-Browser & Cross-Device UI Compatibility: Ensured pixel-perfect responsiveness and fluid interaction across diverse browsers, smartphones, and desktop displays.',
+        'Product Catalogue & Schema Management: Managed dynamic vehicle and grocery catalogue data structures and state machines.',
+        'Optimized Client-Side Booking Funnel: Built snappy reservation and checkout workflows with zero cumulative layout shifts (CLS).',
       ],
       algorithmHeader: 'FLEET TELEMETRY & BOOKING WORKFLOW ENGINE',
       algorithmPoints: [

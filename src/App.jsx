@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import StoryMilestones from './components/StoryMilestones';
 import GraduationBook from './components/GraduationBook';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import CADLab from './components/CADLab';
 import WritingBlog from './components/WritingBlog';
@@ -90,6 +91,7 @@ export default function App() {
         <Hero onLaunchF1={handleLaunchF1} />
         <StoryMilestones />
         <GraduationBook />
+        <Experience />
         <Projects />
         <CADLab />
         <WritingBlog />

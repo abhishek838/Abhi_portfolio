@@ -99,6 +99,7 @@ export default function TerminalContact({ onLaunchF1 }) {
         newHistory.push({
           text: `AVAILABLE COMMANDS:
   • help       - Show this command manual
+  • experience - Inspect industry employment (Infoz, YugaYatra, We5 Mobility)
   • skills     - View technical core proficiencies
   • projects   - Inspect flagship repositories & applications
   • figma      - Inspect Zeeepy 5-Page Web Platform & UI/UX Design System
@@ -116,6 +117,36 @@ export default function TerminalContact({ onLaunchF1 }) {
   • clear      - Clear terminal screen`,
           type: 'info',
         });
+        break;
+
+      case 'experience':
+      case 'employment':
+      case 'career':
+      case 'work':
+      case 'infoz':
+      case 'yugayatra':
+      case 'we5':
+        newHistory.push({
+          text: `CAREER & INDUSTRY EMPLOYMENT:
+  1. Trainee Engineer — Infoz Consulting Services (Jan 2026 – Present)
+     • Spring Boot REST APIs, Spring Security (JWT & Session Cookies)
+     • Google OAuth 2.0 Identity & Payment Gateway Integration
+     • Full-stack React interfaces consuming enterprise backend services
+
+  2. Software Engineer Intern — YugaYatra Retail (OPC) Pvt. Ltd. (May 2025 – Nov 2025)
+     • Designed official company website using React & Bootstrap 5
+     • Built BookBridge platform; reusable component architecture cut dev time by ~30%
+     • Performance optimization via lazy loading, code splitting, image compression
+
+  3. Web Developer — We5 Mobility Solution Pvt. Ltd. (MonkBike) (Mar 2022 – Sep 2022)
+     • Built Monk Bike (bike rental platform) & SuperMonk.store (grocery e-commerce)
+     • Cross-browser & cross-device UI compatibility with responsive fluid layouts
+     • Product catalogue data management within 4-member Agile team
+
+  Scrolling to #experience section!`,
+          type: 'success',
+        });
+        document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
         break;
 
       case 'zeeepy':
