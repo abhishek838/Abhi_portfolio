@@ -12,6 +12,7 @@ import {
   Zap,
   Globe,
   ShieldCheck,
+  Palette,
 } from 'lucide-react';
 
 export default function Skills() {
@@ -114,6 +115,17 @@ export default function Skills() {
       details: 'CSS Grid, Flexbox, Custom Variables, glassmorphism, responsive breakpoints, and GPU-accelerated transforms.',
       experience: '4+ Years',
       context: 'Fluid design systems supporting tri-mode transitions.',
+    },
+    {
+      id: 'figma-uiux',
+      name: 'Figma & UI/UX Design Systems',
+      category: 'frontend',
+      level: 93,
+      icon: Palette,
+      color: '#f24e1e',
+      details: 'Wireframing, interactive prototyping, atomic design tokens, layout grids, and multi-page responsive design.',
+      experience: '3+ Years',
+      context: 'Complete 5-page web platform and design system designed on Figma for Zeeepy.',
     },
     {
       id: 'rest-api',

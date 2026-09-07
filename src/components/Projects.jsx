@@ -26,8 +26,10 @@ import {
   Activity,
   Zap,
   ShoppingBag,
+  Layout,
+  Palette,
 } from 'lucide-react';
-import { GithubIcon } from './Icons';
+import { GithubIcon, FigmaIcon } from './Icons';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -161,6 +163,106 @@ export default function Projects() {
         flowVal: 'MySQL / SQL',
       },
       gradient: 'linear-gradient(135deg, rgba(249, 115, 22, 0.18) 0%, rgba(234, 88, 12, 0.18) 100%)',
+    },
+    {
+      id: 'zeeepy-figma',
+      title: 'Zeeepy (Figma Web Platform)',
+      subtitle: 'Complete 5-Page UI/UX Design System • Wireframing & Responsive Prototyping',
+      icon: FigmaIcon,
+      type: 'design',
+      category: 'FIGMA UI/UX DESIGN SYSTEM & WEB PLATFORM',
+      previewBadge: '🎨 5 FIGMA PAGES IN 1 CARD',
+      status: '5 PAGES WIREFRAMED',
+      tags: [
+        'Figma',
+        'UI/UX Design',
+        'Wireframing',
+        'Design System',
+        'Atomic Components',
+        'Multi-Page Platform',
+        'Cost Calculator',
+        'Localization UX',
+      ],
+      summary:
+        'A comprehensive 5-page web platform and design system designed entirely on Figma for "Zeeepy", a high-velocity global professional translation and localization enterprise. Engineered with a unified design language, clear typographic hierarchy, high-contrast CTA accents (#E53935), structured multilingual directories (120+ languages), interactive quote & cost calculators, customer trust testimonials, and conversion-focused user journeys.',
+      highlights: [
+        '5 Full Figma Pages in 1 Interactive Card: Seamlessly browse all 5 wireframed pages (Homepage, About Us, Contact Us, Testimonials, and Languages) inside this card.',
+        'Conversion-Driven Translation Cost Calculator: Wireframed an instant estimator widget allowing users to calculate page counts, select source/target languages, and attach documents for immediate quotes.',
+        '120+ Regional Language Directory: Architected an accessible geographic taxonomy covering The Americas, Western Europe, and Central/Eastern Europe with tactile filter chips.',
+        'Social Proof & Multi-Tile Video Testimonials: Designed 5-star customer review quote pills with real avatars alongside a 6-video case study gallery.',
+        'Atomic Design System: Crafted unified Figma component sets for top navigation bars, hero headers, service badges, red CTA buttons (#E53935), and toll-free helpline banners.',
+        'Empathetic User Journeys: Frictionless contact pathways featuring direct Pune headquarters address, phone/email contact blocks, and 24/7 client support.',
+      ],
+      algorithmHeader: 'FIGMA DESIGN SYSTEM ARCHITECTURE & UX SPECIFICATIONS',
+      algorithmPoints: [
+        {
+          title: '1. Unified Design Language & Tokens',
+          desc: 'Architected with a signature Zeeepy Crimson Red (#E53935) accent, crisp high-contrast white card surfaces, subtle elevation shadows, and a clean modern typographic hierarchy built for instant readability.',
+        },
+        {
+          title: '2. Conversion Funnel & Cost Calculator Widget',
+          desc: 'Positioned prominent quote calculators and file-upload inputs on both the Homepage and Contact page to minimize onboarding friction and deliver 24-hour turnaround quotes.',
+        },
+        {
+          title: '3. Regional Language Taxonomy & Directory UX',
+          desc: 'Organized 120+ world languages into accessible geographic clusters (The Americas, Western Europe, Central/Eastern Europe) with rounded interaction chips for rapid pairing.',
+        },
+        {
+          title: '4. Enterprise Social Proof & Video Storytelling',
+          desc: 'Reinforced global credibility through 5-star customer review pills, native speaker quality assurances, and interactive video case study placeholders.',
+        },
+      ],
+      slides: [
+        {
+          image: './images/figma/zeeepy-homepage.png',
+          tag: 'PAGE 1 • HOMEPAGE',
+          title: 'Homepage: Hero Banner, Services & Instant Cost Calculator',
+          desc: 'Primary landing page featuring "Superfast Professional Translation Within 24 Hours", key performance metrics (120+ Languages, 15+ Years, 10k Clients), 6-pillar service cards, and instant translation cost calculator.',
+          fit: 'contain',
+          bg: '#f8f9fa',
+        },
+        {
+          image: './images/figma/zeeepy-about.png',
+          tag: 'PAGE 2 • ABOUT US',
+          title: 'About Us: Team Collaboration & Global Mission',
+          desc: 'Company story page featuring multicultural team hero imagery, worldwide mission narrative, native speaker quality assurance, and 1800-123-123 support hotline banner.',
+          fit: 'contain',
+          bg: '#f8f9fa',
+        },
+        {
+          image: './images/figma/zeeepy-contact.png',
+          tag: 'PAGE 3 • CONTACT US',
+          title: 'Contact Us & Pune Headquarters Office',
+          desc: 'Interactive contact gateway featuring customer support agent avatar, physical office address (Pune Office #1), direct phone/email channels, and comprehensive document upload & quote submission form.',
+          fit: 'contain',
+          bg: '#f8f9fa',
+        },
+        {
+          image: './images/figma/zeeepy-testimonials.png',
+          tag: 'PAGE 4 • TESTIMONIALS',
+          title: 'Testimonials: 5-Star Reviews & Video Case Studies',
+          desc: 'Social proof page wireframed with 5-star trust banner, client quote pills with avatars, and a 6-tile multimedia video testimonial grid with overlay play controls.',
+          fit: 'contain',
+          bg: '#f8f9fa',
+        },
+        {
+          image: './images/figma/zeeepy-languages.png',
+          tag: 'PAGE 5 • LANGUAGES',
+          title: '120+ Multilingual Directory Taxonomy',
+          desc: 'Geographic language taxonomy organizing 120+ supported translation languages across The Americas, Western Europe, and Central & Eastern Europe with tactile selection chips.',
+          fit: 'contain',
+          bg: '#f8f9fa',
+        },
+      ],
+      metrics: {
+        archLabel: 'PAGES',
+        archVal: '5 Wireframes',
+        statLabel: 'TOOL',
+        statVal: 'Figma Core',
+        flowLabel: 'TAXONOMY',
+        flowVal: '120+ Languages',
+      },
+      gradient: 'linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(244, 63, 94, 0.18) 100%)',
     },
     {
       id: 'line-follower-robot',
@@ -535,6 +637,8 @@ export default function Projects() {
   const filteredProjects =
     activeCategory === 'all'
       ? projects
+      : activeCategory === 'software'
+      ? projects.filter((p) => p.type === 'software' || p.type === 'design')
       : projects.filter((p) => p.type === activeCategory);
 
   return (
@@ -576,6 +680,7 @@ export default function Projects() {
           {[
             { id: 'all', label: 'All Projects & Research' },
             { id: 'software', label: 'Web Applications & Code' },
+            { id: 'design', label: '🎨 Figma & UI/UX Design' },
             { id: 'robotics', label: 'Robotics & Hardware (Arduino)' },
             { id: 'research', label: 'Peer-Reviewed Research' },
           ].map((tab) => (
@@ -878,6 +983,66 @@ function ProjectCard({ project, onInspect }) {
               ))}
             </div>
           </div>
+
+          {/* Quick Prev / Next Arrows on Card Image */}
+          {project.slides.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCardSlideIdx((prev) => (prev === 0 ? project.slides.length - 1 : prev - 1));
+                }}
+                style={{
+                  position: 'absolute',
+                  left: '0.6rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'rgba(5, 7, 14, 0.75)',
+                  border: '1px solid var(--border-accent)',
+                  color: '#ffffff',
+                  borderRadius: '50%',
+                  width: '28px',
+                  height: '28px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  zIndex: 5,
+                  backdropFilter: 'blur(4px)',
+                }}
+                title="Previous Page"
+              >
+                <ChevronLeft size={15} />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCardSlideIdx((prev) => (prev + 1) % project.slides.length);
+                }}
+                style={{
+                  position: 'absolute',
+                  right: '0.6rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'rgba(5, 7, 14, 0.75)',
+                  border: '1px solid var(--border-accent)',
+                  color: '#ffffff',
+                  borderRadius: '50%',
+                  width: '28px',
+                  height: '28px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  zIndex: 5,
+                  backdropFilter: 'blur(4px)',
+                }}
+                title="Next Page"
+              >
+                <ChevronRight size={15} />
+              </button>
+            </>
+          )}
         </div>
       )}
 
@@ -1071,8 +1236,8 @@ function ProjectCard({ project, onInspect }) {
               padding: '0.75rem 1rem',
             }}
           >
-            <Sparkles size={16} />
-            <span>Inspect Architecture</span>
+            {project.type === 'design' ? <Palette size={16} /> : <Sparkles size={16} />}
+            <span>{project.type === 'design' ? 'Inspect 5 Figma Pages' : 'Inspect Architecture'}</span>
           </button>
         )}
 
@@ -1083,10 +1248,10 @@ function ProjectCard({ project, onInspect }) {
             fontSize: '0.88rem',
             padding: '0.75rem 1.15rem',
           }}
-          title="Inspect Technical Specs"
+          title={project.type === 'design' ? 'Inspect Figma UI/UX Design System' : 'Inspect Technical Specs'}
         >
           <ExternalLink size={16} />
-          <span>Specs</span>
+          <span>{project.type === 'design' ? 'UI Specs' : 'Specs'}</span>
         </button>
       </div>
     </div>
@@ -1188,7 +1353,7 @@ function ProjectDetailModal({ project, initialTab, onClose }) {
                   transition: 'all 0.2s ease',
                 }}
               >
-                <span>📸 PHOTO GALLERY ({slides.length} VIEWS)</span>
+                <span>{project.type === 'design' ? `🎨 FIGMA WIREFRAME PAGES (${slides.length} SCREENS)` : `📸 PHOTO GALLERY (${slides.length} VIEWS)`}</span>
               </button>
 
               {project.videoSupport && (
@@ -1222,7 +1387,7 @@ function ProjectDetailModal({ project, initialTab, onClose }) {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '380px',
+                  height: project.type === 'design' ? '460px' : '380px',
                   backgroundColor: currentSlide.bg || '#060911',
                   overflow: 'hidden',
                   display: 'flex',
@@ -1323,6 +1488,7 @@ function ProjectDetailModal({ project, initialTab, onClose }) {
                   padding: '0.75rem 1.75rem',
                   background: 'rgba(10, 14, 22, 0.95)',
                   borderBottom: '1px solid var(--border-subtle)',
+                  overflowX: 'auto',
                 }}
               >
                 {slides.map((slide, idx) => (
@@ -1330,14 +1496,17 @@ function ProjectDetailModal({ project, initialTab, onClose }) {
                     key={idx}
                     onClick={() => setModalSlideIdx(idx)}
                     style={{
-                      height: '52px',
+                      height: project.type === 'design' ? '60px' : '52px',
+                      minWidth: project.type === 'design' ? '100px' : '65px',
                       flex: 1,
                       borderRadius: '8px',
                       overflow: 'hidden',
                       border: idx === modalSlideIdx ? '2px solid var(--accent-primary)' : '1px solid var(--border-subtle)',
-                      background: '#070a12',
+                      background: slide.bg || '#070a12',
                       padding: 0,
                       cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
                     }}
                     title={slide.title}
                   >
@@ -1346,11 +1515,29 @@ function ProjectDetailModal({ project, initialTab, onClose }) {
                       alt={slide.title}
                       style={{
                         width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        opacity: idx === modalSlideIdx ? 1 : 0.6,
+                        height: project.type === 'design' ? '40px' : '100%',
+                        objectFit: slide.fit || 'cover',
+                        opacity: idx === modalSlideIdx ? 1 : 0.65,
                       }}
                     />
+                    {project.type === 'design' && (
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.58rem',
+                          color: idx === modalSlideIdx ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                          background: 'rgba(0,0,0,0.88)',
+                          padding: '2px 4px',
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          display: 'block',
+                          textAlign: 'center',
+                        }}
+                      >
+                        {slide.tag.replace('PAGE ', 'P')}
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>

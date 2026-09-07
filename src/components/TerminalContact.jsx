@@ -101,6 +101,7 @@ export default function TerminalContact({ onLaunchF1 }) {
   • help       - Show this command manual
   • skills     - View technical core proficiencies
   • projects   - Inspect flagship repositories & applications
+  • figma      - Inspect Zeeepy 5-Page Web Platform & UI/UX Design System
   • tapua      - Inspect Tapua Makhana D2C E-Commerce (Spring Boot & React)
   • clap       - Inspect Acoustic Clap-Activated Smart Switch (Arduino IoT)
   • robot      - Inspect Autonomous Arduino Line Follower 4WD Vehicle
@@ -115,6 +116,27 @@ export default function TerminalContact({ onLaunchF1 }) {
   • clear      - Clear terminal screen`,
           type: 'info',
         });
+        break;
+
+      case 'zeeepy':
+      case 'figma':
+      case 'uiux':
+      case 'design':
+        newHistory.push({
+          text: `ZEEEPY (FIGMA WEB PLATFORM & UI/UX DESIGN SYSTEM):
+  • Core Project: Full 5-page enterprise web platform designed from scratch on Figma
+  • Enterprise:   Zeeepy Global Fast-Turnaround Translation & Localization Platform
+  • 5 Pages:      1. Homepage (Services, Stats, 24h Turnaround, Cost Calculator)
+                  2. About Us (Collaborative Team, Worldwide Mission, 1800 Hotline)
+                  3. Contact Us (Support Avatar, Pune Office #1, Full Quote Form)
+                  4. Testimonials (5-Star Reviews & 6-Tile Video Testimonial Grid)
+                  5. Languages Directory (120+ Languages grouped into 3 Continents)
+  • Design Tokens: Zeeepy Crimson (#E53935), Clean White, 8pt Grid, Component Library
+  • Showcase:     All 5 pages available in 1 interactive card with thumbnail preview!
+  • Scrolling to #projects to view Figma design showcase!`,
+          type: 'success',
+        });
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
         break;
 
       case 'tapua':
@@ -269,10 +291,15 @@ export default function TerminalContact({ onLaunchF1 }) {
      Collaborative literature and zero-cost book donation ecosystem.
   2. Tapua Makhana -> Full-Stack D2C E-Commerce & Agri-Tech Platform
      GI-tagged Mithila Makhana (Spring Boot, React, MySQL, Google OAuth).
-  3. Blockchain Encryption using Biometric Auth -> Indexed on EBSCOhost
+  3. Zeeepy Figma  -> 5-Page Web Platform & UI/UX Design System
+     Figma wireframes for Homepage, About, Contact, Testimonials & Languages (120+).
+  4. Blockchain Encryption using Biometric Auth -> Indexed on EBSCOhost
      Peer-reviewed research published in GIJET (2023).
-  4. MonkBike      -> https://github.com/abhishek838/Monk_Bike
-     Two-wheeler mobility platform built with React during WE5 Mobility Solutions internship.`,
+  5. MonkBike      -> https://github.com/abhishek838/Monk_Bike
+     Two-wheeler mobility platform built with React during WE5 Mobility Solutions internship.
+  6. Autonomous Line Follower -> Arduino Uno 4WD robotic ground vehicle.
+  7. Acoustic Clap Switch     -> IoT Mains AC Lighting Automation (Arduino Uno).
+  8. Hydraulic Gate System    -> 1st Year Engineering Pascal's Law floodgate prototype.`,
           type: 'success',
         });
         break;
