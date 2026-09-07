@@ -37,7 +37,8 @@ class AudioEngine {
     this.audio = null;
     this.isAmbientPlaying = false;
     this.isMuted = false;
-    this.volume = 0.35;
+    this.volume = 0.20; // Default 20% soothing volume
+    this.userPaused = false; // Strict user pause lock
     this.currentTrackIndex = 0;
     this.subscribers = new Set();
     this.f1Ctx = null;
@@ -79,6 +80,7 @@ class AudioEngine {
     return {
       isPlaying: this.isAmbientPlaying,
       isMuted: this.isMuted,
+      userPaused: this.userPaused,
       volume: this.volume,
       currentTrackIndex: this.currentTrackIndex,
       currentTrack: CALM_TRACKS[this.currentTrackIndex] || CALM_TRACKS[0],
@@ -89,9 +91,18 @@ class AudioEngine {
   // =========================================================================
   // 1. Studio-Quality Ambient Audio Controls
   // =========================================================================
-  startAmbient() {
+  startAmbient(forceUserPlay = false) {
     this.initAudioElement();
     if (!this.audio) return;
+
+    // If user explicitly paused, stay paused unless this is an explicit play action
+    if (this.userPaused && !forceUserPlay) {
+      return;
+    }
+
+    if (forceUserPlay) {
+      this.userPaused = false;
+    }
 
     // If volume is off or user is muted, do not play
     if (this.volume === 0 || this.isMuted) {
@@ -124,25 +135,37 @@ class AudioEngine {
     }
   }
 
-  stopAmbient() {
+  pauseAmbient(isUserAction = true) {
     if (this.audio) {
       this.audio.pause();
     }
     this.isAmbientPlaying = false;
+    if (isUserAction) {
+      this.userPaused = true;
+    }
     this.notify();
+  }
+
+  stopAmbient(isUserAction = true) {
+    this.pauseAmbient(isUserAction);
+  }
+
+  playAmbient() {
+    this.userPaused = false;
+    if (this.isMuted) {
+      this.isMuted = false;
+    }
+    if (this.volume === 0) {
+      this.volume = 0.20;
+    }
+    this.startAmbient(true);
   }
 
   toggleAmbient() {
     if (this.isAmbientPlaying) {
-      this.stopAmbient();
+      this.pauseAmbient(true);
     } else {
-      if (this.isMuted) {
-        this.isMuted = false;
-      }
-      if (this.volume === 0) {
-        this.volume = 0.35;
-      }
-      this.startAmbient();
+      this.playAmbient();
     }
   }
 
@@ -185,11 +208,14 @@ class AudioEngine {
       this.audio.volume = this.isMuted ? 0 : this.volume;
     }
 
-    // When volume is turned completely off (0%), STOP playback immediately
+    // When volume is turned completely off (0%), pause playback
     if (clamped === 0) {
-      this.stopAmbient();
-    } else if (!this.isAmbientPlaying && !this.isMuted) {
-      // If user turns up volume from 0, start playing
+      if (this.audio) {
+        this.audio.pause();
+      }
+      this.isAmbientPlaying = false;
+    } else if (!this.isAmbientPlaying && !this.isMuted && !this.userPaused) {
+      // If user turns up volume from 0 and hadn't manually paused, start playing
       this.startAmbient();
     }
 
@@ -206,12 +232,14 @@ class AudioEngine {
         this.audio.pause();
         this.isAmbientPlaying = false;
       } else {
-        // When unmuted, restore volume and resume playing
+        // When unmuted, restore volume and resume only if user hasn't paused
         if (this.volume === 0) {
-          this.volume = 0.35;
+          this.volume = 0.20;
         }
         this.audio.volume = this.volume;
-        this.startAmbient();
+        if (!this.userPaused) {
+          this.startAmbient();
+        }
       }
     }
 

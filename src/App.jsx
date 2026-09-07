@@ -35,16 +35,23 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Ambient audio with browser gesture unlock (strictly respects mute & volume)
+  // Ambient audio with browser gesture unlock (strictly respects mute, volume, & manual pause)
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      const state = audioEngine.getState();
-      if (!state.isMuted && state.volume > 0 && !state.isPlaying) {
-        audioEngine.startAmbient();
-      }
+    const handleFirstInteraction = (e) => {
+      // Clean up listeners immediately
       window.removeEventListener('pointerdown', handleFirstInteraction);
       window.removeEventListener('keydown', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
+
+      // If the interaction clicked directly on audio controls, do not trigger ambient auto-start
+      if (e?.target && e.target.closest && e.target.closest('[data-audio-control="true"]')) {
+        return;
+      }
+
+      const state = audioEngine.getState();
+      if (!state.isMuted && state.volume > 0 && !state.isPlaying && !state.userPaused) {
+        audioEngine.startAmbient();
+      }
     };
 
     window.addEventListener('pointerdown', handleFirstInteraction, { once: true });

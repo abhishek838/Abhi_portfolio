@@ -74,6 +74,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
       {showAudioControls && (
         <div
           className="glass-panel"
+          data-audio-control="true"
           style={{
             padding: '1.25rem',
             display: 'flex',
@@ -98,6 +99,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
 
             <button
               onClick={toggleMute}
+              data-audio-control="true"
               style={{
                 background: 'none',
                 border: 'none',
@@ -133,7 +135,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
                   color: isPlaying ? 'var(--accent-primary)' : 'var(--text-muted)',
                 }}
               >
-                {isPlaying ? '● PLAYING' : '⏸ PAUSED'}
+                {isPlaying ? '● PLAYING (20%)' : '⏸ PAUSED'}
               </span>
             </div>
             <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
@@ -145,6 +147,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.85rem' }}>
             <button
               onClick={handlePrevTrack}
+              data-audio-control="true"
               style={{
                 background: 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid var(--border-subtle)',
@@ -164,6 +167,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
 
             <button
               onClick={togglePlayAudio}
+              data-audio-control="true"
               className="btn-primary"
               style={{
                 borderRadius: '50%',
@@ -174,13 +178,14 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-              title={isPlaying ? 'Pause Calm Audio' : 'Play Calm Audio'}
+              title={isPlaying ? 'Pause Calm Audio (stays paused until you click play)' : 'Play Calm Audio'}
             >
               {isPlaying ? <Pause size={18} /> : <Play size={18} style={{ marginLeft: '2px' }} />}
             </button>
 
             <button
               onClick={handleNextTrack}
+              data-audio-control="true"
               style={{
                 background: 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid var(--border-subtle)',
@@ -209,6 +214,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
                 <button
                   key={t.id}
                   onClick={() => handleSelectTrack(idx)}
+                  data-audio-control="true"
                   style={{
                     padding: '0.35rem 0.5rem',
                     borderRadius: '8px',
@@ -243,6 +249,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <button
               onClick={toggleMute}
+              data-audio-control="true"
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', color: 'var(--text-muted)' }}
               title={isMuted || audioState.volume === 0 ? 'Unmute audio' : 'Mute audio'}
             >
@@ -252,6 +259,7 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
               type="range"
               min="0"
               max="100"
+              data-audio-control="true"
               value={isMuted ? 0 : Math.round(audioState.volume * 100)}
               onChange={handleVolumeChange}
               style={{
@@ -358,61 +366,106 @@ export default function FloatingDock({ currentTheme, onThemeChange, onLaunchF1 }
         {/* Divider */}
         <div style={{ width: '1px', height: '22px', background: 'var(--border-subtle)' }} />
 
-        {/* Audio Equalizer & Track Name Button */}
-        <button
-          onClick={() => {
-            if (!isPlaying) togglePlayAudio();
-            setShowAudioControls(!showAudioControls);
-          }}
-          title={isPlaying ? `Now Playing: ${currentTrack.title} (Click for songs & controls)` : 'Play Calm Ambient Audio'}
+        {/* Audio Pill: Quick Play/Pause Button + Equalizer / Title / Expand Menu */}
+        <div
+          data-audio-control="true"
           style={{
-            background: isPlaying ? 'var(--badge-bg)' : 'transparent',
-            border: isPlaying ? '1px solid var(--border-accent)' : '1px solid transparent',
-            color: isPlaying ? 'var(--accent-primary)' : 'var(--text-secondary)',
-            borderRadius: '9999px',
-            padding: '7px 11px',
-            cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '3px',
+            background: isPlaying ? 'var(--badge-bg)' : 'rgba(0,0,0,0.28)',
+            border: isPlaying ? '1px solid var(--border-accent)' : '1px solid var(--border-subtle)',
+            borderRadius: '9999px',
+            padding: '2px 8px 2px 3px',
             transition: 'all 0.25s ease',
           }}
         >
-          {/* Animated Equalizer Bars */}
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '2px', height: '14px' }}>
-            <span
+          {/* Quick Direct Play / Pause Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              togglePlayAudio();
+            }}
+            data-audio-control="true"
+            style={{
+              background: isPlaying ? 'var(--accent-primary)' : 'rgba(255, 255, 255, 0.12)',
+              color: isPlaying ? '#050508' : 'var(--text-primary)',
+              border: 'none',
+              borderRadius: '50%',
+              width: '26px',
+              height: '26px',
+              padding: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+            title={isPlaying ? 'Pause Calm Audio (stays paused until you click play)' : 'Play Calm Audio'}
+          >
+            {isPlaying ? <Pause size={12} /> : <Play size={12} style={{ marginLeft: '1px' }} />}
+          </button>
+
+          {/* Title & Equalizer to Expand/Collapse Drawer without toggling play state */}
+          <button
+            onClick={() => setShowAudioControls((prev) => !prev)}
+            data-audio-control="true"
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: isPlaying ? 'var(--accent-primary)' : 'var(--text-secondary)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '4px 6px',
+              transition: 'all 0.2s ease',
+            }}
+            title={showAudioControls ? 'Hide Audio Controls' : `Now: ${currentTrack.title} (Click to open playlist)`}
+          >
+            {/* Animated Equalizer Bars */}
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '2px', height: '13px' }}>
+              <span
+                style={{
+                  width: '2.5px',
+                  height: isPlaying ? '12px' : '4px',
+                  backgroundColor: 'currentColor',
+                  borderRadius: '1px',
+                  animation: isPlaying ? 'equalizerBar 0.8s ease-in-out infinite alternate' : 'none',
+                }}
+              />
+              <span
+                style={{
+                  width: '2.5px',
+                  height: isPlaying ? '15px' : '7px',
+                  backgroundColor: 'currentColor',
+                  borderRadius: '1px',
+                  animation: isPlaying ? 'equalizerBar 0.5s ease-in-out infinite alternate 0.2s' : 'none',
+                }}
+              />
+              <span
+                style={{
+                  width: '2.5px',
+                  height: isPlaying ? '10px' : '5px',
+                  backgroundColor: 'currentColor',
+                  borderRadius: '1px',
+                  animation: isPlaying ? 'equalizerBar 0.7s ease-in-out infinite alternate 0.4s' : 'none',
+                }}
+              />
+            </div>
+            <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
+              {isPlaying ? currentTrack.title : 'CALM AUDIO'}
+            </span>
+            <ChevronDown
+              size={12}
               style={{
-                width: '2.5px',
-                height: isPlaying ? '12px' : '4px',
-                backgroundColor: 'currentColor',
-                borderRadius: '1px',
-                animation: isPlaying ? 'equalizerBar 0.8s ease-in-out infinite alternate' : 'none',
+                opacity: 0.7,
+                transform: showAudioControls ? 'rotate(180deg)' : 'none',
+                transition: 'transform 0.2s ease',
               }}
             />
-            <span
-              style={{
-                width: '2.5px',
-                height: isPlaying ? '16px' : '7px',
-                backgroundColor: 'currentColor',
-                borderRadius: '1px',
-                animation: isPlaying ? 'equalizerBar 0.5s ease-in-out infinite alternate 0.2s' : 'none',
-              }}
-            />
-            <span
-              style={{
-                width: '2.5px',
-                height: isPlaying ? '10px' : '5px',
-                backgroundColor: 'currentColor',
-                borderRadius: '1px',
-                animation: isPlaying ? 'equalizerBar 0.7s ease-in-out infinite alternate 0.4s' : 'none',
-              }}
-            />
-          </div>
-          <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
-            {isPlaying ? currentTrack.title : 'CALM AUDIO'}
-          </span>
-          <ChevronDown size={12} style={{ opacity: 0.7 }} />
-        </button>
+          </button>
+        </div>
 
         {/* Divider */}
         <div style={{ width: '1px', height: '22px', background: 'var(--border-subtle)' }} />
