@@ -1,0 +1,231 @@
+@import './design-tokens.css';
+
+/* Reset & Core Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, #ffffff 50%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Surface Components */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 25px var(--accent-glow-subtle);
+}
+
+.glass-pill {
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+.glass-pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Magnetic / Glow Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: #050508;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  border: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease,
+              filter 0.25s ease;
+  box-shadow: 0 10px 25px var(--accent-glow-subtle);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 35px var(--accent-glow);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-accent);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  padding: 0.85rem 1.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* F1 Overdrive High-Octane Action Button */
+.btn-f1-nitro {
+  background: linear-gradient(135deg, #ff0055 0%, #ff5500 50%, #ffbb00 100%);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  border: none;
+  padding: 0.85rem 1.9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 30, 80, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: f1PulseGlow 2.5s infinite alternate;
+}
+
+.btn-f1-nitro:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 45px rgba(255, 80, 0, 0.85), inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes f1PulseGlow {
+  0% { box-shadow: 0 0 20px rgba(255, 0, 85, 0.45); }
+  100% { box-shadow: 0 0 35px rgba(255, 120, 0, 0.75); }
+}
+
+/* Screen Shake Effect for F1 Teleport Launch */
+.screen-shake-intense {
+  animation: shakeViewport 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shakeViewport {
+  10%, 90% { transform: translate3d(-2px, 1px, 0) rotate(-0.5deg); }
+  20%, 80% { transform: translate3d(4px, -3px, 0) rotate(0.8deg); }
+  30%, 50%, 70% { transform: translate3d(-5px, 4px, 0) rotate(-1deg); }
+  40%, 60% { transform: translate3d(5px, -4px, 0) rotate(1deg); }
+}
+
+/* Neo-Brutalist Grid Background Pattern */
+.bg-grid-cyber {
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glowing Neon Borders */
+.neon-glow-cyan {
+  box-shadow: 0 0 25px var(--accent-glow-subtle);
+}
+
+.neon-glow-cyan:hover {
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
+/* Responsive Containers */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}

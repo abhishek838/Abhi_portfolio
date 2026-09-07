@@ -1,0 +1,114 @@
+/* Design Tokens & Multi-Theme Matrix for Abhishek Kumar Portfolio */
+
+:root {
+  /* Typography */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Global Transitions */
+  --theme-transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.4s ease,
+                      color 0.4s ease,
+                      box-shadow 0.4s ease;
+}
+
+/* ==========================================================================
+   1. Normal Mode (Studio Charcoal + Electric Cyan & Violet)
+   ========================================================================== */
+body.theme-normal {
+  --bg-primary: #070a10;
+  --bg-secondary: #0d121d;
+  --bg-elevated: rgba(18, 26, 40, 0.72);
+  --bg-card: rgba(14, 20, 32, 0.65);
+  --bg-card-hover: rgba(22, 32, 50, 0.85);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-cyan: #00f0ff;
+  --accent-violet: #8b5cf6;
+  --accent-primary: #00f0ff;
+  --accent-secondary: #8b5cf6;
+  --accent-glow: rgba(0, 240, 255, 0.35);
+  --accent-glow-subtle: rgba(0, 240, 255, 0.12);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 240, 255, 0.28);
+  --border-hover: rgba(0, 240, 255, 0.6);
+
+  --badge-bg: rgba(0, 240, 255, 0.1);
+  --badge-text: #38bdf8;
+  --badge-border: rgba(0, 240, 255, 0.25);
+
+  --glass-reflection: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --grid-line-color: rgba(0, 240, 255, 0.04);
+}
+
+/* ==========================================================================
+   2. Snow Theme (Winter Glacial Frost + Crystalline Cyan & Diamond White)
+   ========================================================================== */
+body.theme-snow, body.theme-dark {
+  --bg-primary: #060b14;
+  --bg-secondary: #0b1524;
+  --bg-elevated: rgba(14, 26, 44, 0.76);
+  --bg-card: rgba(12, 22, 38, 0.72);
+  --bg-card-hover: rgba(20, 36, 60, 0.88);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --accent-cyan: #38bdf8;
+  --accent-violet: #7dd3fc;
+  --accent-primary: #38bdf8;
+  --accent-secondary: #e0f2fe;
+  --accent-glow: rgba(56, 189, 248, 0.45);
+  --accent-glow-subtle: rgba(56, 189, 248, 0.16);
+
+  --border-subtle: rgba(224, 242, 254, 0.12);
+  --border-accent: rgba(56, 189, 248, 0.38);
+  --border-hover: rgba(56, 189, 248, 0.75);
+
+  --badge-bg: rgba(56, 189, 248, 0.14);
+  --badge-text: #e0f2fe;
+  --badge-border: rgba(56, 189, 248, 0.35);
+
+  --glass-reflection: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(186, 230, 253, 0.04) 100%);
+  --grid-line-color: rgba(56, 189, 248, 0.05);
+}
+
+/* ==========================================================================
+   3. Relax Mode (Warm Nocturnal Indigo + Amber & Emerald Aurora)
+   ========================================================================== */
+body.theme-relax {
+  --bg-primary: #090c15;
+  --bg-secondary: #0f1523;
+  --bg-elevated: rgba(20, 26, 40, 0.78);
+  --bg-card: rgba(16, 22, 34, 0.7);
+  --bg-card-hover: rgba(25, 34, 52, 0.88);
+
+  --text-primary: #fef3c7;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --accent-cyan: #f59e0b;
+  --accent-violet: #10b981;
+  --accent-primary: #f59e0b;
+  --accent-secondary: #10b981;
+  --accent-glow: rgba(245, 158, 11, 0.35);
+  --accent-glow-subtle: rgba(245, 158, 11, 0.12);
+
+  --border-subtle: rgba(245, 158, 11, 0.1);
+  --border-accent: rgba(245, 158, 11, 0.32);
+  --border-hover: rgba(245, 158, 11, 0.65);
+
+  --badge-bg: rgba(245, 158, 11, 0.12);
+  --badge-text: #fbbf24;
+  --badge-border: rgba(245, 158, 11, 0.3);
+
+  --glass-reflection: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.03) 100%);
+  --grid-line-color: rgba(245, 158, 11, 0.04);
+}
