@@ -15,13 +15,11 @@ export default function Navbar({ onLaunchF1 }) {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#about' },
     { label: 'Milestones', href: '#story' },
     { label: 'Grad Book', href: '#graduation-book' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: '3D Lab', href: '#cad-lab' },
-    { label: 'Writing', href: '#writing' },
     { label: 'Arsenal', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
